@@ -1,7 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './GoogleForm.css'; // Import the CSS file
 
 const GoogleForm = () => {
+  const navigate = useNavigate(); // Hook for navigation
+
+  const handleAccountClick = () => {
+    // Redirect to the logged-in page
+    navigate('/logged-in');
+  };
+
   return (
     <div className="google-form-wrapper">
       {/* Left Section with Gradient Background */}
@@ -20,12 +28,12 @@ const GoogleForm = () => {
       {/* Right Section with Google Account Selection Form */}
       <div className="google-right-section">
         <div className="google-login-box">
-          <h2 style={{fontWeight: "600", color : "rgb(139, 0, 0)",}}>Utopia</h2>
+          <h2 style={{ fontWeight: '600', color: 'rgb(139, 0, 0)' }}>Utopia</h2>
           <p className="google-subtitle">Continue with Google</p>
           <p className="google-info">
             Select an account for accessing the application UTOPIA
           </p>
-          <div className="google-account-card">
+          <div className="google-account-card" onClick={handleAccountClick}>
             <div className="google-account-icon">M</div>
             <div className="google-account-details">
               <p className="google-account-name">MR HOUSSAM ZAZ</p>
